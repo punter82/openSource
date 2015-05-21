@@ -1,6 +1,6 @@
 /*
 * Awesome JS Version 1.0
-* @Credits: Prasanna Venkatesh(pvenkatesh3@sapient.com) & Kiran Adepu (kadepu@sapient.com)
+* @Credits: Prasanna Venkatesh & Kiran Adepu
 */
 
 /*
