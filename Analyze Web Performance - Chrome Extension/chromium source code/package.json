@@ -1,0 +1,19 @@
+{
+  "name": "AnalyzeWebPerformance",
+  "version": "0.0.1",
+  "author": {
+    "name": "Analyze Web Performance"
+  },
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-compress": "~0.5.3",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-githooks": "~0.3.1",
+    "jshint": "~2.5.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-cssmin": "^0.10.0"
+  }
+}

@@ -1,0 +1,8 @@
+Capture Page weight and size of each resource
+Ability to sort the table values
+Ability to export the report in PDF and Excel.
+
+Capture XHR Requests and show more details pertaining to each one - dom.mutation
+Capture Cached information vs non cached
+Capture every reflow requests and painting done by DOM as users scroll or resize the window or any DOM events that happen.
+Ability for Users to override some of the standard settings.

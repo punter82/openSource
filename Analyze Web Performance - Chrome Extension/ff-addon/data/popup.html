@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Analyze Web Performance</title>
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+  </head>
+	<body>
+    <header>
+      <h2> Total Page Load Time : <span id="page-load-time"></span> seconds</h2>
+      <h3>This page is as <span id="time-symbol"></span></h3>   
+    </header>
+    <div class="tabs">
+      <div class="tab">
+        <input type="radio" id="tab-1" name="tab-group-1" checked="">
+        <label for="tab-1">General Info</label>   
+        <div class="content">
+        <p> 
+          Mouse over the pie chart to get information about the page load time distribution. For more information  
+          <a href="https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/NavigationTiming/Overview.html">click here</a>
+        </p>
+        <div id="holder"></div>
+        <ul class="accordion" id ="vertical">
+          <li class="slide-01">
+            <div>
+              <h2>Redirect Time : <span id='redirect-header'></span> seconds</h2>
+              <p>Redirect time is the amount of time resource redirects in the page took to load. It is best to avoid redirects in any html page. You may have noticed already the number of redirects that has happened on this page displayed above. Redirect time is calculated based on the Time after last redirect response ends minus the Time of fetch that initiated a redirect. (redirectEnd - redirectStart).
+              </p>
+            </div>
+          </li>
+          <li class="slide-02">
+            <div>
+              <h2>Unload Time : <span id='unload-header'></span> seconds</h2>
+              <p>Unload Time is the amount of time taken for the page to unload. this will usually happen on page refresh or if you came to his page using ht back or forward arrow. Unload time is calculated based on Time after unload finished minus Time just before unload started (unloadEnd - unloadStart).</p>
+            </div>
+          </li>
+          <li class="slide-03">
+            <div>
+              <h2>DNS Time : <span id='dns-header'></span> seconds</h2>
+              <p>DNS or Domain Name System time is the amount of time taken for the domain lookup to happen. DNS time is calculated based on Time after domain name lookup minus Time just before domain name lookup (domainLookupEnd - domainLookupStart).</p>
+            </div>
+          </li>
+          <li class="slide-04">
+            <div>
+              <h2>Connection Time : <span id='connection-header'></span> seconds</h2>
+              <p>It is the time page took to establish a connection, including TCP handshakes/retries and negotiating a SSL. The connectStart is subtracted from connectEnd to determine the connection time (connectEnd - connectStart).</p>
+            </div>
+          </li>
+          <li class="slide-05">
+            <div>
+              <h2>Response Time : <span id='request-header'></span> seconds</h2>
+              <p>Response time is the amount of time taken for the server to respond to the requests made by this page. It is Time after the end of a response or connection minus Time just before a server request (responseEnd - requestStart) </p>
+            </div>
+          </li>
+          <li class="slide-06">
+            <div>
+              <h2>DOM Load Time : <span id='dom-content-load-header'></span> seconds</h2>
+              <p>Amount of time take for the creation of the DOM elements. It includes Getting all markup, replaced element content and embeds from server, Parsing the markup , Applying the CSS cascade to the markup , Rendering the page, Running all scripts that need to run on page load. It basically is Time just before document readiness completes minus Time just before readiness set to loading (domComplete - domLoading)</p>
+            </div>
+          </li>
+          <li class="slide-07">
+            <div>
+              <h2>General Load Time : <span id='load-event-header'></span> seconds</h2>
+              <p>It is the time from -  just before the load event is fired  to - when the load event is complete (loadEventEnd - loadEventStart)</p>
+            </div>
+          </li>
+        </ul>
+      </div> 
+    </div>
+    <div class="tab">
+       <input type="radio" id="tab-2" name="tab-group-1">
+       <label for="tab-2">Detailed Info</label>
+       <div class="content">
+         <p>
+          <span class="bold-text">Navigation Type</span> (Indicates how you landed in this page): <span id="type" class="bold-text"></span>
+          <br><br>
+          <span class="lead-text">Below are some pointer due to which this page may be slower than you like:</span>
+          <br>
+          <span class="bold-text">
+            Redirect Count: <span id="redirect-count"></span>
+          </span>
+          (Redirects slows down the page speed drasticlly . Also it can lead to SEO related issues.)
+          <br>
+          <span class="bold-text">
+            Empty Image sources Count: <span id="empty-img-count"></span>
+          </span>
+           (Empty image sources makes unnecessary requests adding to page weight.)
+           <br>
+          <span class="bold-text">
+          Iframes in page Count: <span id="iframe-count"></span>
+          </span>
+           (Iframes must usually be avoided as Search Engines Find it Difficult to index the webpage.)
+         </p>
+         <p id="detail-info">
+          <div class="tabs inner-tabs">
+            <div class="inner-tab tab">
+              <input type="radio" id="tab-3" name="tab-group-2" checked="">
+              <label for="tab-3">JS resources <span id='jsCount'></span></label>   
+              <div id="js-info" class="content inner-content">
+                External JS Count: <span id='externalJSCount'></span> |  Internal JS Count: <span id='internalJSCount'></span>
+              </div>
+            </div>
+            <div class="inner-tab tab">
+              <input type="radio" id="tab-4" name="tab-group-2">
+              <label for="tab-4">CSS resources <span id='cssCount'></span></label>   
+              <div id="css-info" class="content inner-content">
+                External CSS Count: <span id='externalCSSCount'></span> |  Internal CSS Count: <span id='internalCSSCount'></span>
+              </div>
+            </div>
+            <div class="inner-tab tab">
+              <input type="radio" id="tab-5" name="tab-group-2">
+              <label for="tab-5">Image resources <span id='imgCount'></span></label>
+              <div id="img-info" class="content inner-content">
+                External Img Count: <span id='externalImgCount'></span> |  Internal Img Count: <span id='internalImgCount'></span>
+              </div>
+            </div>
+        </div>
+         </p>
+       </div> 
+      </div>
+    </div>
+    <footer>
+      <script src="js/library/raphael-min.js"></script>
+      <script src="js/app/popup.js"></script>
+    </footer>
+  </body>
+</html>

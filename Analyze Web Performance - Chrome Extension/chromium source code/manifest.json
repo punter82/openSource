@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Analyze Page Performance",
+  "description": "This extension helps in measuring page load time and other relevant details",
+  "version": "1.0",
+  "background": {
+    "scripts": ["js/plugin/bootstrap-min.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "icons/speed.png",
+    "default_popup": "popup.html"
+  },
+   "content_scripts": [{
+      "matches": ["*://*/*"],
+      "js": ["js/plugin/content-scripts-min.js"]
+  }],
+  "permissions": [
+      "http://*/*",
+      "tabs",
+      "storage",
+      "webNavigation",
+      "activeTab",
+      "downloads"
+  ]
+}
