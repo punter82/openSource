@@ -1,0 +1,40 @@
+/*Generic tag level chanegs*/
+body {
+    margin: 0 10px;
+    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans","Geneva","Verdana","sans-serif";
+}
+footer {
+    position: absolute;
+    bottom: 5px;
+}
+/* Helper object and classes
+ * Display Object 
+ */
+.disp-hide {
+    display: none;
+}
+.disp-show {
+    display: block;
+}
+.disp-show-inline {
+    display: inline;
+}
+.disp-show-inline-block {
+    display: inline-block;
+}
+/*Generic Clases*/
+.container {
+    display: block;
+}
+.title, .sub-title {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+/*button objects*/
+.btn-full-width {
+    width: 100%;
+}
+.btn-lg {
+    margin-bottom: 10px;
+}
