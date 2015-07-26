@@ -7,3 +7,5 @@ This is where Framework Genie comes in. The idea is abstract all analysis from t
 her/him choose a framework based a set ( rather a bunch ) of questions very intelligently stitched together. As simple as that!
 
 But, the simpler it gets for the engineer, the higher is the level of difficulty for us.
+
+Coming soon .... Keep watching this space for more.
